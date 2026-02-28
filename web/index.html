@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unkdown Booster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="startup-loader" class="startup-loader">
+        <div class="loader-content">
+            <i class="ph-fill ph-lightning neon-icon-large"></i>
+            <h2>UNKDOWN <span>BOOSTER</span></h2>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+            <p>Iniciando o Motor de Otimização...</p>
+        </div>
+    </div>
+
+    <div class="cinematic-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="app-layout">
+        
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <div class="logo-box">
+                    <img src="logo.jpg" alt="Logo" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover;">
+                </div>
+                <div class="logo-text">
+                    <h2>UNKDOWN <span>BOOSTER</span></h2>
+                    <p>ULTRA TUNING SYSTEM</p>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" data-target="dashboard">
+                    <i class="ph ph-squares-four"></i>
+                    <span>Visão Geral</span>
+                </button>
+                <button class="nav-item" data-target="settings">
+                    <i class="ph ph-faders"></i>
+                    <span>Ajustes Finos</span>
+                </button>
+                <button class="nav-item" data-target="about">
+                    <i class="ph ph-info"></i>
+                    <span>Sistema</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="system-status">
+                    <div class="pulsing-led"></div>
+                    <div class="status-details">
+                        <h4>SISTEMA ONLINE</h4>
+                        <p>Licença: Ultimate VIP</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-nav">
+                <h1 id="page-title">Visão Geral</h1>
+                <div class="user-profile">
+                    <div class="avatar">
+                        <img src="logo.jpg" alt="User Unkdown">
+                    </div>
+                </div>
+            </header>
+
+            <div class="views-container">
+                
+                <div id="dashboard" class="view active">
+                    <div class="featured-banner glass-panel">
+                        <div class="banner-content">
+                            <span class="badge">RECOMENDADO</span>
+                            <h2>Injeção Global de Performance</h2>
+                            <p>Otimize a CPU, Limpe a RAM, Renove a Rede e Sincronize o Windows com um único clique. Libere o fps máximo instantaneamente.</p>
+                            <button class="btn-primary huge" id="btn-full" onclick="runFullBoost()">
+                                <i class="ph-bold ph-rocket-launch"></i>
+                                <span class="btn-text">INCIAR OTIMIZAÇÃO TOTAL</span>
+                                <div class="btn-loader" style="display: none;"><i class="ph-bold ph-spinner-gap spin"></i></div>
+                            </button>
+                        </div>
+                        <div class="banner-image">
+                            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop" alt="Processor">
+                            <div class="img-gradient"></div>
+                        </div>
+                    </div>
+
+                    <div class="tools-grid">
+                        
+                        <div class="tool-card glass-panel" onclick="runTask('limpar', this)">
+                            <div class="card-icon"><i class="ph-duotone ph-trash"></i></div>
+                            <div class="card-info">
+                                <h3>Limpeza Profunda</h3>
+                                <p>Varre e destrói lixo gerado pelo Windows.</p>
+                            </div>
+                            <button class="action-btn"><i class="ph-bold ph-caret-right"></i></button>
+                            <div class="card-loader"><i class="ph-bold ph-spinner-gap spin"></i></div>
+                        </div>
+
+                        <div class="tool-card glass-panel" onclick="runTask('energia', this)">
+                            <div class="card-icon warning"><i class="ph-duotone ph-battery-charging"></i></div>
+                            <div class="card-info">
+                                <h3>Força Máxima CPU</h3>
+                                <p>Força clock máximo do processador em 100%.</p>
+                            </div>
+                            <button class="action-btn"><i class="ph-bold ph-caret-right"></i></button>
+                            <div class="card-loader"><i class="ph-bold ph-spinner-gap spin"></i></div>
+                        </div>
+
+                        <div class="tool-card glass-panel" onclick="runTask('rede', this)">
+                            <div class="card-icon success"><i class="ph-duotone ph-wifi-high"></i></div>
+                            <div class="card-info">
+                                <h3>Otimização de Ping</h3>
+                                <p>Limpa logs de rede e zera rotas TCP/IP.</p>
+                            </div>
+                            <button class="action-btn"><i class="ph-bold ph-caret-right"></i></button>
+                            <div class="card-loader"><i class="ph-bold ph-spinner-gap spin"></i></div>
+                        </div>
+
+                        <div class="tool-card glass-panel" onclick="runTask('ram', this)">
+                            <div class="card-icon info"><i class="ph-duotone ph-memory"></i></div>
+                            <div class="card-info">
+                                <h3>Despejar RAM</h3>
+                                <p>Libera a memória cache que fica travada.</p>
+                            </div>
+                            <button class="action-btn"><i class="ph-bold ph-caret-right"></i></button>
+                            <div class="card-loader"><i class="ph-bold ph-spinner-gap spin"></i></div>
+                        </div>
+
+                        <div class="tool-card feature glass-panel" onclick="runTask('jogo', this)">
+                            <div class="feature-bg">
+                                <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=2165&auto=format&fit=crop" alt="Gaming">
+                            </div>
+                            <div class="card-content-overlay">
+                                <div class="card-icon highlight"><i class="ph-duotone ph-crosshair"></i></div>
+                                <div class="card-info">
+                                    <h3>Game Booster - Injetor Real-Time</h3>
+                                    <p>Selecione o processo do jogo (ex: valorant.exe) para forçar o núcleo do Windows a focar 100% dos recursos nele.</p>
+                                </div>
+                                <button class="btn-primary small">INJETAR PRIORIDADE</button>
+                            </div>
+                            <div class="card-loader black"><i class="ph-bold ph-spinner-gap spin"></i> Trabalhando...</div>
+                        </div>
+
+                        <div class="tool-card glass-panel" onclick="runTask('winget', this)">
+                            <div class="card-icon sys"><i class="ph-duotone ph-arrows-clockwise"></i></div>
+                            <div class="card-info">
+                                <h3>Windows Sync</h3>
+                                <p>Atualiza pacotes WinGet críticos.</p>
+                            </div>
+                            <button class="action-btn"><i class="ph-bold ph-caret-right"></i></button>
+                            <div class="card-loader"><i class="ph-bold ph-spinner-gap spin"></i></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="settings" class="view">
+                    <div class="glass-panel settings-container">
+                        <div class="setting-row">
+                            <div class="setting-text">
+                                <div class="setting-icon"><i class="ph-fill ph-windows-logo"></i></div>
+                                <div>
+                                    <h3>Iniciar Oculto com o Windows</h3>
+                                    <p>Adiciona o Unkdown Booster no registro (Auto-Start).</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="switch-startup" onchange="toggleStartup()">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-row">
+                            <div class="setting-text">
+                                <div class="setting-icon accent"><i class="ph-fill ph-game-controller"></i></div>
+                                <div>
+                                    <h3>Smart Gamer Mode</h3>
+                                    <p>Ouve processos do Windows e otimiza automaticamente ao detectar um AAA ou eSport.</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="switch-gamer" onchange="toggleGamer()">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="about" class="view">
+                    <div class="glass-panel about-container">
+                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=1974&auto=format&fit=crop" class="about-bg" alt="Abstract">
+                        <div class="about-content">
+                            <img src="logo.jpg" style="width: 120px; border-radius: 20px; margin-bottom: 24px;">
+                            <h1 class="mega-title">UNKDOWN BOOSTER</h1>
+                            <p class="mega-sub">SOFTWARE DE OTIMIZAÇÃO DE ENGENHARIA DE PERFOMANCE</p>
+                            
+                            <div class="dev-credits">
+                                <span>DESIGN E CÓDIGO POR</span>
+                                <h2>SANTZX</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        
+        <footer class="footer-bar glass-panel-dark">
+            <div class="logs-indicator">
+                <i class="ph-bold ph-terminal" id="terminal-icon"></i>
+                <span id="log-text">Console aguardando comandos do usuário...</span>
+            </div>
+            <div class="progress-bar-wrapper">
+                <div id="progress-indicator" class="progress-fill"></div>
+            </div>
+        </footer>
+
+    </div>
+
+    <div id="dialog-overlay" class="modal-overlay">
+        <div class="modal glass-panel">
+            <div class="modal-header">
+                <div class="modal-icon"><i class="ph-duotone ph-crosshair"></i></div>
+                <h3>Processo do Jogo</h3>
+            </div>
+            <p>Insira o arquivo executável responsável pelo jogo (ex: <code>cs2.exe</code>, <code>LeagueClient.exe</code>)</p>
+            
+            <div class="input-group">
+                <i class="ph-bold ph-magnifying-glass"></i>
+                <input type="text" id="game-input" placeholder="Processar nome.exe..." autocomplete="off">
+            </div>
+
+            <div class="modal-buttons">
+                <button class="btn-ghost" onclick="closeDialog(false)">Tirar Foco</button>
+                <button class="btn-primary" onclick="closeDialog(true)">
+                    <span>Injetar Boost</span>
+                    <i class="ph-bold ph-cursor-click"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
