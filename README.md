@@ -22,7 +22,7 @@ Software de otimização de engenharia de performance para Windows. Projetado pa
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/unkdown-booster.git
+   git clone https://github.com/desomorfina/Unkdown-Booster
    cd unkdown-booster
    ```
 
